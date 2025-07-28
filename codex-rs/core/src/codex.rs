@@ -43,6 +43,7 @@ use crate::error::Result as CodexResult;
 use crate::error::SandboxErr;
 use crate::exec::ExecParams;
 use crate::exec::ExecToolCallOutput;
+use crate::exec::MAX_STREAM_OUTPUT;
 use crate::exec::SandboxType;
 use crate::exec::process_exec_tool_call;
 use crate::exec_env::create_env;
@@ -369,7 +370,6 @@ impl Session {
         stderr: &str,
         exit_code: i32,
     ) {
-        const MAX_STREAM_OUTPUT: usize = 5 * 1024; // 5KiB
         let event = Event {
             id: sub_id.to_string(),
             // Because stdout and stderr could each be up to 100 KiB, we send

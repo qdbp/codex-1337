@@ -36,6 +36,7 @@ use crate::event_processor::handle_last_message;
 /// This should be configurable. When used in CI, users may not want to impose
 /// a limit so they can see the full transcript.
 const MAX_OUTPUT_LINES_FOR_EXEC_TOOL_CALL: usize = 20;
+
 pub(crate) struct EventProcessorWithHumanOutput {
     call_id_to_command: HashMap<String, ExecCommandBegin>,
     call_id_to_patch: HashMap<String, PatchApplyBegin>,

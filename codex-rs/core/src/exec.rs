@@ -24,11 +24,9 @@ use crate::error::Result;
 use crate::error::SandboxErr;
 use crate::protocol::SandboxPolicy;
 
-// Maximum we send for each stream, which is either:
-// - 10KiB OR
-// - 256 lines
-const MAX_STREAM_OUTPUT: usize = 10 * 1024;
-const MAX_STREAM_OUTPUT_LINES: usize = 256;
+// Maximum we send for each stream, which is A LOT LMAO
+pub const MAX_STREAM_OUTPUT: usize = 666 * 1024;
+pub const MAX_STREAM_OUTPUT_LINES: usize = 0x1337;
 
 const DEFAULT_TIMEOUT_MS: u64 = 10_000;
 
